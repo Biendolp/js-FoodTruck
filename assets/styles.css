@@ -1,5 +1,5 @@
 body {
-    background-color: #5c4634;
+    background-color: #363737;
 }
 
 footer {
@@ -19,7 +19,7 @@ footer {
 }
 
 #KrabbyPatty {
-    background-image: url(pictures/krabbypatty.jpg);
+    background-image: url(pictures/krabbypatty.png);
     background-size: cover;
     background-position: center;
 }
