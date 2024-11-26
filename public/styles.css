@@ -54,6 +54,10 @@ footer {
     background-position: center;
 }
 
-.dropdown-menu .nav-link {
-    color: black !important;
+.dropdown-menu {
+    background-color: #4c4e4e;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    background-color: #969696; /* Light background color on hover */
 }
