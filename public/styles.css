@@ -53,3 +53,7 @@ footer {
     background-size: cover;
     background-position: center;
 }
+
+.dropdown-menu .nav-link {
+    color: black !important;
+}
