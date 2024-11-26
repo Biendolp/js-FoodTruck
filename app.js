@@ -14,3 +14,4 @@ app.get('/', (request, response) => {
 });
 
 const menuRoutes = require
+app.listen(port, () => console.log(`http://localhost:${port}/`))
