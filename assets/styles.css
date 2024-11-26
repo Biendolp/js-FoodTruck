@@ -9,12 +9,13 @@ footer {
 }
 
 .container {
-    background-color: rgba(0, 0, 0, .75);
+    background-color: rgba(0, 0, 0, .85);
     color:white;
     margin: 5%;
     padding: 5%;
     border: 7px solid black;
     border-radius: 50px;
+    position: relative;
 }
 
 #KrabbyPatty {
@@ -24,7 +25,7 @@ footer {
 }
 
 #KrustyKrabPizza {
-    background-image: url(pictures/Pizza.jpg);
+    background-image: url(pictures/Pizza.png);
     background-size: cover;
     background-position: center;
 }
