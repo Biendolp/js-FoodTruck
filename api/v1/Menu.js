@@ -6,6 +6,6 @@ const {GetFood, ObjectId } = require('../../dbconnect')
 router.get('/:Number', async (request, response) => {
     const { Number } = request.params
     const collection = await GetFood('KrustyKartAPI', 'Menu Items')
-    console.log(collection.find().toArray())
+    console.log(await collection.findOne({"Number": parseInt(Number) }))
     response.send('done')
 })
