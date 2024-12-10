@@ -2,7 +2,7 @@
 
 @Type = 1
 
-GET {{url}}/Menu/Krabby%20Patty
+GET {{url}}/Menu/1
 
 ###
 
