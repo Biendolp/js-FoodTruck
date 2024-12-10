@@ -55,6 +55,36 @@ footer {
     background-position: center;
 }
 
+#GooLagoon{
+    background-image: url(pictures/lagoon.png);
+    background-size: cover;
+    background-position: center;
+}
+
+#KrustyKrab{
+    background-image: url(pictures/The_Krusty_Krab.png);
+    background-size: cover;
+    background-position: center;
+}
+
+#JellyFishFields{
+    background-image: url(pictures/jellyfish.png);
+    background-size: cover;
+    background-position: center;
+}
+
+#Bubbletown{
+    background-image: url(pictures/bubble.png);
+    background-size: cover;
+    background-position: center;
+}
+
+#Atlantis{
+    background-image: url(pictures/atlantis.png);
+    background-size: cover;
+    background-position: center;
+}
+
 .dropdown-menu {
     background-color: #4c4e4e;
 }
