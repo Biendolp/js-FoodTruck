@@ -1,5 +1,6 @@
 body {
     background-color: #363737;
+    color: white;
 }
 
 footer {
@@ -59,5 +60,9 @@ footer {
 }
 
 .navbar-nav .nav-item .nav-link:hover {
-    background-color: #969696; /* Light background color on hover */
+    background-color: #969696;
+}
+
+.headertext {
+    text-align: center;
 }
