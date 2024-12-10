@@ -2,12 +2,14 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const menuRoutes = require('./api/v1/Menu');
+const eventsRoutes = require('./api/v1/Events');
 
 const port = 3010;
 
 app.use(express.json());
 app.use(express.static('public'));
 
+app.use('/api/v1/Events', eventsRoutes);
 app.use('/api/v1/Menu', menuRoutes);
 
 const root = path.join(__dirname, 'public');
@@ -22,7 +24,7 @@ app.get('/', (request, response) => {
 
 /* This route should return a JSON object that contains the menu items for the food truck. */
 app.get('/api/v1/menu', (request, response) =>{
-
+    response.sendFile('index.html', { root });
 })
 
 /* This route should return a JSON object that contains the events for the food truck. */

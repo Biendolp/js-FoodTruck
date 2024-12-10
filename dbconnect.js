@@ -4,9 +4,9 @@ const { uri } = require('./secrets/mongodb.json');
 
 const client = new MongoClient(uri);
 
-const GetFood = async (dbName, collectionName) => {
+const GetCollection = async (dbName, collectionName) => {
     await client.connect();
     return client.db(dbName).collection(collectionName);
 };
 
-module.exports = { GetFood, ObjectId };
+module.exports = { GetCollection, ObjectId };

@@ -4,7 +4,8 @@
 
 GET {{url}}/Menu/Krabby%20Patty
 
+###
 
+## Check for Events
 
-GET {{url}}/menu/Kelp%20Shake
-
+GET {{url}}/Events/2
