@@ -1,5 +1,6 @@
 body {
     background-color: #363737;
+    color: white;
 }
 
 footer {
@@ -52,4 +53,16 @@ footer {
     background-image: url(pictures/kelpshake.png);
     background-size: cover;
     background-position: center;
+}
+
+.dropdown-menu {
+    background-color: #4c4e4e;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    background-color: #969696;
+}
+
+.headertext {
+    text-align: center;
 }
