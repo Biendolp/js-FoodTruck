@@ -5,7 +5,22 @@
 GET {{url}}/Menu/1
 
 ###
+## Check for all Events
+GET {{url}}/Events/
 
-## Check for Events
-
+###
+## Check for Events ID
 GET {{url}}/Events/2
+
+###
+## Add Events
+POST {{url}}/Events/
+Content-Type: application/json
+
+{
+    "Name":"TEST",
+    "Location":"TEST",
+    "Date":"January 1st, 9999",
+    "Time":"6:66pm",
+    "ID":"0"
+}

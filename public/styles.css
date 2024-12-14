@@ -9,6 +9,11 @@ footer {
     padding: 25px;
 }
 
+.content {
+    max-width: 500px;
+    margin: auto;
+  }
+
 .container {
     background-color: rgba(0, 0, 0, .85);
     color:white;
@@ -17,72 +22,6 @@ footer {
     border: 7px solid black;
     border-radius: 50px;
     position: relative;
-}
-
-#KrabbyPatty {
-    background-image: url(pictures/krabbypatty.png);
-    background-size: cover;
-    background-position: center;
-}
-
-#KrustyKrabPizza {
-    background-image: url(pictures/Pizza.png);
-    background-size: cover;
-    background-position: center;
-}
-
-#CoralBits {
-    background-image: url(pictures/coral.png);
-    background-size: cover;
-    background-position: center;
-}
-
-#SaltySeaDog {
-    background-image: url(pictures/seadog.png);
-    background-size: cover;
-    background-position: center;
-}
-
-#PizzaPatty {
-    background-image: url(pictures/pizzapatty.png);
-    background-size: cover;
-    background-position: center;
-}
-
-#KelpShake {
-    background-image: url(pictures/kelpshake.png);
-    background-size: cover;
-    background-position: center;
-}
-
-#GooLagoon{
-    background-image: url(pictures/lagoon.png);
-    background-size: cover;
-    background-position: center;
-}
-
-#KrustyKrab{
-    background-image: url(pictures/The_Krusty_Krab.png);
-    background-size: cover;
-    background-position: center;
-}
-
-#JellyFishFields{
-    background-image: url(pictures/jellyfish.png);
-    background-size: cover;
-    background-position: center;
-}
-
-#Bubbletown{
-    background-image: url(pictures/bubble.png);
-    background-size: cover;
-    background-position: center;
-}
-
-#Atlantis{
-    background-image: url(pictures/atlantis.png);
-    background-size: cover;
-    background-position: center;
 }
 
 .dropdown-menu {

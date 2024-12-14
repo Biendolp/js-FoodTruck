@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { GetCollection } = require('../../dbconnect');
+const { GetCollection } = require('../../../dbconnect');
 
 router.get('/:Number', async (request, response) => {
     const { Number } = request.params;

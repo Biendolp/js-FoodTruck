@@ -1,15 +1,10 @@
 const router = require('express').Router()
 const path = require('path');
-const port = 3010;
 
 const root = path.join(__dirname, '..', 'public');
 
-app.use(express.json());
-app.use(express.static('public'));
 
-
-
-
+//
 /* This route should return a JSON object that contains the menu items for the food truck. */
 router.get('/api/v1/menu', (request, response) =>{
     response.sendFile('index.html', { root })
