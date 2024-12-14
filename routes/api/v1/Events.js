@@ -16,12 +16,12 @@ router.get('/:ID', async (request, response) => {
 });
 
 router.post('/', async (request, response) => {
-    const { number, Name, Location, Date, Time, ID } = request.body
+    const {  Name, Location, Date, Time, ID } = request.body
     const collection = await GetCollection('KrustyKartAPI', 'Events')
     const result = await collection.insertOne({ Name, Location, Date, Time, ID })
     console.log(result)
     response.send('done')
-})
+});
 
 module.exports = router;
 

@@ -2,18 +2,32 @@
 
 @Type = 1
 
+### Check All Menu Items
+GET {{url}}/Menu/
+
+### Check For Menu Item ID
 GET {{url}}/Menu/1
 
-###
-## Check for all Events
+### Add Menu Item
+POST {{url}}/Menu/
+Content-Type: application/json
+
+{
+    "Name":"TEST",
+    "Description":"TEST",
+    "Price":"January 1st, 9999",
+    "Number":"6:66pm"
+}
+
+
+
+### Check for all Events
 GET {{url}}/Events/
 
-###
-## Check for Events ID
+### Check for Events ID
 GET {{url}}/Events/2
 
-###
-## Add Events
+### Add Events
 POST {{url}}/Events/
 Content-Type: application/json
 

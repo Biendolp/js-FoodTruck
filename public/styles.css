@@ -9,6 +9,28 @@ footer {
     padding: 25px;
 }
 
+label { 
+    font-weight: bold; 
+}
+
+fieldset { 
+    padding: 9px; 
+    margin-bottom: 20px; 
+    border: 1px solid #ddd; 
+}
+
+legend { 
+    padding: 0 10px; 
+    font-weight: 
+    bold; 
+    font-size: 14px; 
+    line-height: 20px; 
+}
+
+textarea { 
+    padding: 10px; 
+}
+
 .content {
     max-width: 500px;
     margin: auto;
@@ -35,3 +57,4 @@ footer {
 .headertext {
     text-align: center;
 }
+
