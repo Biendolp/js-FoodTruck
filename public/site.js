@@ -10,8 +10,7 @@ const getEventId = async id => {
 }
 //function to load the events onto the html page 
 const loadEvents = events => {
-    //Gets the events and data
-    events.forEach(({ _id, Name, Date, }) => {
+
         //Selecting the UL with the event class
         const eventsList = document.querySelector('.event');
     //clears it of any data that may be inside
@@ -84,9 +83,8 @@ const getMenuId = async id => {
 })()
 
 document.getElementById('menuForm').addEventListener('submit', async function (event) {
-    event.preventDefault(); // Prevent the default form submission
+    event.preventDefault();
 
-    // Collect data from the form
     const menuData = {
         ProductName: document.getElementById('menuName').value,
         Description: document.getElementById('menuDescription').value,
@@ -102,5 +100,22 @@ document.getElementById('menuForm').addEventListener('submit', async function (e
     });
 });
 
+document.getElementById('eventForm').addEventListener('submit', async function (event) {
+    event.preventDefault();
+
+    const menuData = {
+        Name: document.getElementById('eventName').value,
+        Location: document.getElementById('eventLocation').value,
+        Date: document.getElementById('eventDate').value,
+        Time: document.getElementById('eventTime').value
+    };
+    const response = await fetch('http://localhost:3010/api/v1/events', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(menuData)
+    });
+});
 
 

@@ -44,22 +44,17 @@
 
 
 
-            <h1 class="headertext">Add a Event</h1>
-                <form>
-                    <fieldset>
-                        <legend>Event Details</legend>
-                        <p><label>Name</label>
-                        <input type="text" name="name" id="name"></p>
-                        <p><label>Loaction</label>
-                        <input type="text" name="location" id="location"></p>
-                        <p><label>Date</label>
-                        <input type="text" name="date" id="date"></p>
-                        <p><label>Time</label>
-                        <input type="text" name="time" id="time"></p>
-                    </fieldset>
-                    
-                    <p><input type="submit" name="submit" value="Add Event" class="eventAdd"></p>
-                </form>
+          <h1 class="headertext">Add an Event</h1>
+          <form id="eventForm">
+              <fieldset>
+                  <legend>Event Details</legend>
+                  <p><label>Event Name</label><input type="text" name="name" id="eventName"></p>
+                  <p><label>Location</label><input type="text" name="location" id="eventLocation"></p>
+                  <p><label>Date</label><input type="text" name="date" id="eventDate"></p>
+                  <p><label>Time</label><input type="text" name="time" id="eventTime"></p>
+              </fieldset>
+              <p><input type="submit" value="Add Event"></p>
+          </form>
         </div>
     
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
