@@ -6,6 +6,7 @@ const getEvents = async () => {
 }
 const getEventId = async id => {
 	const response = await fetch(`/api/v1/events/${id}`)
+    loadDetails(id);
 	return await response.json()
 }
 //function to load the events onto the html page 
@@ -25,18 +26,26 @@ const loadEvents = events => {
         //adding an event listener to all the buttons to load by id
         const detailButton = eventItem.querySelector(`.details`)
         detailButton.addEventListener('click', async () => {
-            console.log(`${_id}`)
+            getEventId(_id);
         })
 	})
 }
 
+const loadDetails = item => {
+        const eventsList = document.querySelector('.itemDetails');
+        const eventItem = document.createElement('li')
+            eventItem.innerHTML = `<h2>${Name}</h2>
+                                <p>Date: ${Date}</p>
+                                <button class="details" data-id="${_id}">Details</button>`
+            eventsList.appendChild(eventItem);
+}
 
 
 
 //Load menu
 
 //get menu items from api
-const getMenu = async () => {
+async function getMenu() {
     const response = await fetch('/api/v1/menu')
     return await response.json()
 }
