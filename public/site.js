@@ -6,8 +6,7 @@ const getEvents = async () => {
 }
 const getEventId = async id => {
 	const response = await fetch(`/api/v1/events/${id}`)
-    const event = await response.json()
-    loadDetails(event);
+    return await response.json()
 }
 //function to load the events onto the html page 
 const loadEvents = events => {
@@ -26,16 +25,17 @@ const loadEvents = events => {
         //adding an event listener to all the buttons to load by id
         const detailButton = eventItem.querySelector(`.details`)
         detailButton.addEventListener('click', async () => {
-            getEventId(_id);
+            const event = await getEventId(_id);
+            loadDetails(event);
         })
 	})
 }
 
 const loadDetails = item => {
+    window.location.href = `details.html`
         const eventsList = document.querySelector('.itemDetails');
         const eventItem = document.createElement('li')
-            eventItem.innerHTML = `<h2>${item.Name}</h2>
-                                <p>Date: ${item.Date}</p>`
+            eventItem.innerHTML = `<h2>Hi</h2>`
             eventsList.appendChild(eventItem);
 }
 
@@ -51,12 +51,13 @@ async function getMenu() {
 
 
 const loadMenu = menuItem => {
-    menuItem.forEach(({ _id, ProductName, Price }) => {
+    menuItem.forEach(({ _id, ProductName, Price, Image }) => {
 	    const menuList = document.querySelector('.menu');
         menuList.innerHTML = '';
-        menuItem.forEach(({ _id, ProductName, Price }) => {
+        menuItem.forEach(({ _id, ProductName, Price, Image }) => {
         const menuItem = document.createElement('li')
         menuItem.innerHTML = `<h2>${ProductName}</h2>
+                              <img class="menuimg" src="${Image}">
                               <p>Price: ${Price}</p>
                               <button id="${_id}">Details</button>`
         menuList.appendChild(menuItem);
