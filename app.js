@@ -6,15 +6,25 @@ const eventsRoutes = require('./routes/api/v1/Events'); //events api route
 
 const port = 3010;
 
+// can send json
+app.use(express.json());
+// respond with static web pages
+app.use(express.static('public'));
+//enpoint connection
+app.use('/api/v1/Events', eventsRoutes);
+app.use('/api/v1/Menu', menuRoutes);
+app.use(require('./routes/static'))
+
 const root = path.join(__dirname, 'public');
 
-app.use(express.json());
-
-app.use(express.static('public'));
-
 app.get('/', (request, response) => {
-    res.sendFile('index.html', { root });
+    response.sendFile('index.html', { root });
 });
 
-const menuRoutes = require
-app.listen(port, () => console.log(`http://localhost:${port}/`))
+app.get('/admin', (request, response) => {
+    response.sendFile('admin.html', { root });
+});
+
+app.listen(port, () => {
+    console.log(`http://localhost:${port}`);
+});
