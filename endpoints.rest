@@ -1,0 +1,10 @@
+@url = http://localHost:3010/api/v1
+
+@Type = 1
+
+GET {{url}}/Menu/Krabby%20Patty
+
+
+
+GET {{url}}/menu/Kelp%20Shake
+

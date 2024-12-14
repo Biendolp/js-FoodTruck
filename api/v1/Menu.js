@@ -1,11 +1,16 @@
-const router = require('express').router()
-const { response } = require('express')
-const {GetFood, ObjectId } = require('../../dbconnect')
+const express = require('express');
+const router = express.Router();
+const { GetFood } = require('../../dbconnect');  // Adjusted path to your dbconnect.js
 
+// Route for getting menu item by product name
+router.get('/:ProductName', async (req, res) => {
+    const { ProductName } = request.params;
+    const collection = await GetFood('KrustyKartAPI', 'Menu Items');
+    const item = await collection.findOne({ "ProductName": ProductName });
 
-router.get('/:Number', async (request, response) => {
-    const { Number } = request.params
-    const collection = await GetFood('KrustyKartAPI', 'Menu Items')
-    console.log(await collection.findOne({"Number": parseInt(Number) }))
-    response.send('done')
-})
+    if (item) {
+        res.json(item);  // Return the found item as JSON
+    } 
+});
+
+module.exports = router;  // Ensure the router is exported
