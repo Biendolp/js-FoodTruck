@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { GetCollection } = require('../../../dbconnect');
+const { GetCollection, ObjectId } = require('../../../dbconnect');
 
 
 router.get('/', async (request, response) => {
@@ -9,10 +9,10 @@ router.get('/', async (request, response) => {
     response.json(found);
 });
 
-router.get('/:Number', async (request, response) => {
-    const { Number } = request.params;
+router.get('/:id', async (request, response) => {
+    const { id } = request.params;
     const collection = await GetCollection('KrustyKartAPI', 'Menu Items');
-    const found = await collection.findOne({ "Number": Number });
+    const found = await collection.findOne({ _id: new ObjectId(id) });
     response.json(found);
     
 });

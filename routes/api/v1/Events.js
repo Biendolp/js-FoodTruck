@@ -8,10 +8,10 @@ router.get('/', async (request, response) => {
     response.json(found);
 });
 
-router.get('/:ID', async (request, response) => {
-    const { ID } = request.params;
-    const collection = await GetCollection('KrustyKartAPI', 'Events')
-    const found = await collection.findOne({ "ID": ID });
+router.get('/:id', async (request, response) => {
+    const { id } = request.params;
+    const collection = await GetCollection('KrustyKartAPI', 'Events');
+    const found = await collection.findOne({ _id: new ObjectId(id) });
     response.json(found);
 });
 

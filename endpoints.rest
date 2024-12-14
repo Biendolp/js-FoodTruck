@@ -1,12 +1,13 @@
 @url = http://localHost:3010/api/v1
 
-@Type = 1
+@menuId = 67462e91569f6361e1377767
+@eventId = 6757e5beee4de52a7c7e3733
 
 ### Check All Menu Items
 GET {{url}}/Menu/
 
 ### Check For Menu Item ID
-GET {{url}}/Menu/1
+GET {{url}}/Menu/{{menuId}}
 
 ### Add Menu Item
 POST {{url}}/Menu/
@@ -25,7 +26,7 @@ Content-Type: application/json
 GET {{url}}/Events/
 
 ### Check for Events ID
-GET {{url}}/Events/2
+GET {{url}}/Events/{{eventId}}
 
 ### Add Events
 POST {{url}}/Events/
