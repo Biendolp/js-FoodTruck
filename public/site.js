@@ -19,18 +19,16 @@ const loadEvents = events => {
     //for each event create a li inside the ul, the inside the li add the name and date properties.
     events.forEach(({ _id, Name, Date, }) => {
         const eventItem = document.createElement('li')
-        eventItem.innerHTML = `
-            <h2>${Name}</h2>
-            <p>Date: ${Date}</p>
-            <button class="details" data-id="${_id}">Details</button>
-        `
-        //adding an event listener to all the buttons to load by id
-        //document.querySelector('.details').addEventListener('click', async () => {
-        //    const eventDetails = await getEventId(_id);
-        //    console.log(eventDetails);
-        //})
+        eventItem.innerHTML = `<h2>${Name}</h2>
+                               <p>Date: ${Date}</p>
+                               <button class="${Name}" data-id="${_id}">Details</button>`
         //Add it to the ul with class of event
         eventsList.appendChild(eventItem);
+        //adding an event listener to all the buttons to load by id
+        const detailButton = document.querySelector(`.${Name}`)
+        detailButton.addEventListener('click', async () => {
+            console.log(`${_id}`)
+        })
 	})
 })}
 
@@ -52,11 +50,9 @@ const loadMenu = menuItem => {
         menuList.innerHTML = '';
         menuItem.forEach(({ _id, ProductName, Price }) => {
         const menuItem = document.createElement('li')
-        menuItem.innerHTML = `
-            <h2>${ProductName}</h2>
-            <p>Price: ${Price}</p>
-            <button id="${_id}">Details</button>
-        `
+        menuItem.innerHTML = `<h2>${ProductName}</h2>
+                              <p>Price: ${Price}</p>
+                              <button id="${_id}">Details</button>`
         menuList.appendChild(menuItem);
 	    })
     })
