@@ -6,13 +6,14 @@ const getEvents = async () => {
 }
 const getEventId = async id => {
 	const response = await fetch(`/api/v1/events/${id}`)
-    const event = await response.json()
-    loadDetails(event);
+	return await response.json()
 }
 //function to load the events onto the html page 
 const loadEvents = events => {
-    //Selecting the UL with the event class
-	const eventsList = document.querySelector('.event');
+    //Gets the events and data
+    events.forEach(({ _id, Name, Date, }) => {
+        //Selecting the UL with the event class
+        const eventsList = document.querySelector('.event');
     //clears it of any data that may be inside
     eventsList.innerHTML = '';
     //for each event create a li inside the ul, the inside the li add the name and date properties.
@@ -24,27 +25,20 @@ const loadEvents = events => {
         //Add it to the ul with class of event
         eventsList.appendChild(eventItem);
         //adding an event listener to all the buttons to load by id
-        const detailButton = eventItem.querySelector(`.details`)
+        const detailButton = document.querySelector(`.details`)
         detailButton.addEventListener('click', async () => {
-            getEventId(_id);
+            console.log(`${_id}`)
         })
-	})
-}
+    })
+})}
 
-const loadDetails = item => {
-        const eventsList = document.querySelector('.itemDetails');
-        const eventItem = document.createElement('li')
-            eventItem.innerHTML = `<h2>${item.Name}</h2>
-                                <p>Date: ${item.Date}</p>`
-            eventsList.appendChild(eventItem);
-}
 
 
 
 //Load menu
 
 //get menu items from api
-async function getMenu() {
+const getMenu = async () => {
     const response = await fetch('/api/v1/menu')
     return await response.json()
 }
@@ -70,6 +64,8 @@ const getMenuId = async id => {
 }
 
 
+
+
 ;(async () => {
 	const events = await getEvents();
     const menu = await getMenu();
@@ -77,3 +73,25 @@ const getMenuId = async id => {
     loadEvents(events);
 
 })()
+
+document.getElementById('menuForm').addEventListener('submit', async function (event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Collect data from the form
+    const menuData = {
+        ProductName: document.getElementById('menuName').value,
+        Description: document.getElementById('menuDescription').value,
+        Price: document.getElementById('menuPrice').value,
+        Image: document.getElementById('menuImgLink').value
+    };
+    const response = await fetch('http://localhost:3010/api/v1/menu', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(menuData)
+    });
+});
+
+
+
