@@ -10,10 +10,8 @@ const getEventId = async id => {
 }
 //function to load the events onto the html page 
 const loadEvents = events => {
-    //Gets the events and data
-    events.forEach(({ _id, Name, Date, }) => {
-        //Selecting the UL with the event class
-		const eventsList = document.querySelector('.event');
+    //Selecting the UL with the event class
+	const eventsList = document.querySelector('.event');
     //clears it of any data that may be inside
     eventsList.innerHTML = '';
     //for each event create a li inside the ul, the inside the li add the name and date properties.
@@ -21,16 +19,16 @@ const loadEvents = events => {
         const eventItem = document.createElement('li')
         eventItem.innerHTML = `<h2>${Name}</h2>
                                <p>Date: ${Date}</p>
-                               <button class="${Name}" data-id="${_id}">Details</button>`
+                               <button class="details" data-id="${_id}">Details</button>`
         //Add it to the ul with class of event
         eventsList.appendChild(eventItem);
         //adding an event listener to all the buttons to load by id
-        const detailButton = document.querySelector(`.${Name}`)
+        const detailButton = eventItem.querySelector(`.details`)
         detailButton.addEventListener('click', async () => {
             console.log(`${_id}`)
         })
 	})
-})}
+}
 
 
 
