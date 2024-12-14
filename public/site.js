@@ -6,8 +6,8 @@ const getEvents = async () => {
 }
 const getEventId = async id => {
 	const response = await fetch(`/api/v1/events/${id}`)
-    loadDetails(id);
-	return await response.json()
+    const event = await response.json()
+    loadDetails(event);
 }
 //function to load the events onto the html page 
 const loadEvents = events => {
@@ -34,9 +34,8 @@ const loadEvents = events => {
 const loadDetails = item => {
         const eventsList = document.querySelector('.itemDetails');
         const eventItem = document.createElement('li')
-            eventItem.innerHTML = `<h2>${Name}</h2>
-                                <p>Date: ${Date}</p>
-                                <button class="details" data-id="${_id}">Details</button>`
+            eventItem.innerHTML = `<h2>${item.Name}</h2>
+                                <p>Date: ${item.Date}</p>`
             eventsList.appendChild(eventItem);
 }
 

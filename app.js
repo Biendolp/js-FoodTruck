@@ -13,7 +13,6 @@ app.use(express.static('public'));
 //enpoint connection
 app.use('/api/v1/Events', eventsRoutes);
 app.use('/api/v1/Menu', menuRoutes);
-app.use(require('./routes/static'))
 
 const root = path.join(__dirname, 'public');
 
@@ -23,6 +22,10 @@ app.get('/', (request, response) => {
 
 app.get('/admin', (request, response) => {
     response.sendFile('admin.html', { root });
+});
+
+app.get('/details', (request, response) => {
+    response.sendFile('details.html', { root });
 });
 
 app.listen(port, () => {
