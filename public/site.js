@@ -68,18 +68,16 @@ const getMenu = async () => {
 
 
 const loadMenu = menuItem => {
-    menuItem.forEach(({ _id, ProductName, Price, Image }) => {
 	    const menuList = document.querySelector('.menu');
         menuList.innerHTML = '';
-        menuItem.forEach(({ _id, ProductName, Price, Image }) => {
+        menuItem.forEach(({ _id, ProductName, Description, Price, Image }) => {
         const menuItem = document.createElement('li')
         menuItem.innerHTML = `<h2>${ProductName}</h2>
                               <img class="menuimg" src="${Image}">
-                              <p>Price: ${Price}</p>
-                              <button id="${_id}">Details</button>`
+                              <p>Price: ${Description}</p>
+                              <p>Price: ${Price}</p>`
         menuList.appendChild(menuItem);
 	    })
-    })
 }
 
 const getMenuId = async id => {
