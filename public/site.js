@@ -4,10 +4,7 @@ const getEvents = async () => {
     const response = await fetch('/api/v1/events')
     return await response.json()
 }
-const getEventId = async id => {
-	const response = await fetch(`/api/v1/events/${id}`)
-    return await response.json()
-}
+
 //function to load the events onto the html page 
 const loadEvents = events => {
 
@@ -27,24 +24,11 @@ const loadEvents = events => {
         const detailButton = eventItem.querySelector(`.details`)
         detailButton.addEventListener('click', async () => {
             window.location.href = `/event/${_id}`;
-            loadEventDetails();
         })
 	})
 }
 
-const loadEventDetails = async () => {
-    //get id
-    const { eventId } = request.params
-    //load event by id
-    const event = await getEventId(eventId)/////
-    const eventItem = document.querySelector('.itemDetails')
-    eventItem.innerHTML = `<h2>${event.Name}</h2>
-                           <h4>Location: ${event.Loaciton}</h4>
-                           <h4>Date: ${event.Date}</h4>
-                           <h4>Time: ${event.Time}</h4>`
-    
 
-}
 
 
 //failed details page load
@@ -89,10 +73,13 @@ const getMenuId = async id => {
 
 
 ;(async () => {
+    //Index generation (Working)
 	const events = await getEvents();
     const menu = await getMenu();
     loadMenu(menu);
     loadEvents(events);
+
+    //details generation (not working)
 
 })()
 
