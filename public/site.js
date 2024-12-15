@@ -24,10 +24,9 @@ const loadEvents = events => {
         //Add it to the ul with class of event
         eventsList.appendChild(eventItem);
         //adding an event listener to all the buttons to load by id
-        const detailButton = document.querySelector(`.details`)
+        const detailButton = eventItem.querySelector(`.details`)
         detailButton.addEventListener('click', async () => {
-            const event = await getEventId(_id);
-            loadDetails(event);
+            window.location.href = `/event/${_id}`;
         })
 	})
 }
