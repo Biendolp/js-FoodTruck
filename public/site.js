@@ -92,7 +92,7 @@ document.getElementById('menuForm').addEventListener('submit', async function (e
         Price: document.getElementById('menuPrice').value,
         Image: document.getElementById('menuImgLink').value
     };
-    const response = await fetch('http://localhost:3010/api/v1/menu', {
+    await fetch('http://localhost:3010/api/v1/menu', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -110,7 +110,7 @@ document.getElementById('eventForm').addEventListener('submit', async function (
         Date: document.getElementById('eventDate').value,
         Time: document.getElementById('eventTime').value
     };
-    const response = await fetch('http://localhost:3010/api/v1/events', {
+    await fetch('http://localhost:3010/api/v1/events', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
