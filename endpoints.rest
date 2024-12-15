@@ -36,5 +36,5 @@ Content-Type: application/json
     "Name":"TEST",
     "Location":"TEST",
     "Date":"January 1st, 9999",
-    "Time":"6:66pm",
+    "Time":"6:66pm"
 }
