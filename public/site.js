@@ -34,9 +34,9 @@ const loadEvents = events => {
 
 const loadEventDetails = async () => {
     //get id
-    const urlParams = new URLSearchParams(window.location.search).get('id')
+    const { eventId } = request.params
     //load event by id
-    const event = await getEventId(urlParams)/////
+    const event = await getEventId(eventId)/////
     const eventItem = document.querySelector('.itemDetails')
     eventItem.innerHTML = `<h2>${event.Name}</h2>
                            <h4>Location: ${event.Loaciton}</h4>
