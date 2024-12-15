@@ -27,17 +27,34 @@ const loadEvents = events => {
         const detailButton = eventItem.querySelector(`.details`)
         detailButton.addEventListener('click', async () => {
             window.location.href = `/event/${_id}`;
+            loadEventDetails();
         })
 	})
 }
 
-const loadDetails = item => {
-    window.location.href = `details.html`
-        const eventsList = document.querySelector('.itemDetails');
-        const eventItem = document.createElement('li')
-            eventItem.innerHTML = `<h2>Hi</h2>`
-            eventsList.appendChild(eventItem);
+const loadEventDetails = async () => {
+    //get id
+    const urlParams = new URLSearchParams(window.location.search).get('id')
+    //load event by id
+    const event = await getEventId(urlParams)/////
+    const eventItem = document.querySelector('.itemDetails')
+    eventItem.innerHTML = `<h2>${event.Name}</h2>
+                           <h4>Location: ${event.Loaciton}</h4>
+                           <h4>Date: ${event.Date}</h4>
+                           <h4>Time: ${event.Time}</h4>`
+    
+
 }
+
+
+//failed details page load
+//const loadDetails = item => {
+//    window.location.href = `details.html`
+//        const eventsList = document.querySelector('.itemDetails');
+//        const eventItem = document.createElement('li')
+//            eventItem.innerHTML = `<h2>Hi</h2>`
+//            eventsList.appendChild(eventItem);
+//}
 
 
 
