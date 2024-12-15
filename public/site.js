@@ -58,7 +58,7 @@ const loadMenu = menuItem => {
         const menuItem = document.createElement('li')
         menuItem.innerHTML = `<h2>${ProductName}</h2>
                               <img class="menuimg" src="${Image}">
-                              <p>Price: ${Description}</p>
+                              <p>Description: ${Description}</p>
                               <p>Price: ${Price}</p>`
         menuList.appendChild(menuItem);
 	    })
